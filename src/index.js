@@ -418,8 +418,11 @@ class MiniCssExtractPlugin {
                         '}',
                       ])
                     : '',
-                  'var head = document.getElementById("css-loader")[0];',
-                  'head.appendChild(linkTag);',
+                  'var cssContainer = document.getElementById("css-loader")[0];',
+                  'cssContainer.appendChild(linkTag);',
+
+                  'var head = document.getElementsByTagName("head")[0];',
+                  'if (head) { head.remove() }',
                 ]),
                 '}).then(function() {',
                 Template.indent(['installedCssChunks[chunkId] = 0;']),
