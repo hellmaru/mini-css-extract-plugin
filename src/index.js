@@ -418,7 +418,7 @@ class MiniCssExtractPlugin {
                         '}',
                       ])
                     : '',
-                  'var head = document.getElementsByTagName("head")[0];',
+                  'var head = document.getElementById("css-loader")[0];',
                   'head.appendChild(linkTag);',
                 ]),
                 '}).then(function() {',
